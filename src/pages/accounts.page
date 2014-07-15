@@ -1,0 +1,12 @@
+<apex:page showHeader="true" sidebar="true" controller="AccountController">
+	<apex:outputPanel rendered="{!accounts.size != 0}">
+		<apex:repeat value="{!accounts}" var="acc">
+			<apex:outputLink value="{!URLFOR($Page.accounts, null, [id=acc.id])}" >
+				{!acc.Name} <br/>
+			</apex:outputLink>
+		</apex:repeat>
+	</apex:outputPanel>
+	<apex:outputPanel rendered="{!account != null}" >
+		{!account.Name} - {!account.AccountNumber}
+	</apex:outputPanel>
+</apex:page>
